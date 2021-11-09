@@ -4,17 +4,24 @@ Programming Competition Cheat Sheet
 This repository contains usefull algorithms and utility scripts for programming
 competitions.
 
+For a tcr (team contest reference), have a look at
+[this one](https://github.com/ludopulles/tcr) (which inspired some of the code
+in this repository).
+
 Content
 -------
 
 ### setup
 
-This folder contains a setup script which automatically creates folders for all
-exercises, containing the `name.cpp` and `name.py` templates, and a `Makefile`
-with support for automated testing. Tests should be added in the subfolder
-`tests`. Each test consists of a input file `<name>.in` and a matching output
-file `<name>.out`. In order to test the `cpp` file, run `make cpp` (or simply
-`make`), to test the `py` file, run `make py`.
+In order to setup for a contest, first edit the script `setup.sh` so that the
+brace expansion `{A..L}` matches the available exercises. Running the script
+then generates a folder for each exercise, containing a copy of `name.cpp`,
+`name.py` and `Makefile` (with `name` replaced by the exercise name everywhere).
+A subfolder `tests` is also created for every exercise.
+
+The makefile provided can be used to automatically compile and test `cpp` and
+`python` code. Simply run `make cpp` or `make py` after putting the test files
+(with extenstions `.in` and `.out`) in the corresponding `tests` folder.
 
 
 ### cpp
